@@ -133,3 +133,14 @@ python inference/model_comparison.py --model llama3.2-3b --formats hf onnx ov --
 ## Hardware Compatibility
 
 The framework automatically detects hardware capabilities and gracefully handles unsupported configurations by displaying "Not supported by hardware" instead of throwing errors.
+
+## Project Status
+
+For detailed information about completed benchmarks, current development progress, and future roadmap, see [project_summary.md](project_summary.md).
+
+### Recent Achievements
+- ✅ **19+ benchmark runs** completed successfully
+- ✅ **Llama 3.2 3B** fully tested across HF, ONNX, and OpenVINO formats
+- ✅ **Intel hardware detection** working with NPU, GPU, and CPU support
+- ✅ **Model comparison tools** operational with quality assessment
+- ✅ **Interactive examples** providing user-friendly experience
