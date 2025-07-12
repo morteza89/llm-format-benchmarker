@@ -14,6 +14,8 @@ The benchmarker addresses the critical need for performance validation when depl
 
 ## Supported Models
 
+## Following models have been tested and verified so far. To be continued...
+
 - **Qwen 2.5**: Alibaba's latest language model
 - **Llama 3.2 3B**: Meta's compact language model
 - **LLaVA**: Large Language and Vision Assistant
