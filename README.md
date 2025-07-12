@@ -6,6 +6,12 @@
 
 A comprehensive benchmarking framework for Large Language Models (LLMs) using different quantization techniques and hardware backends including Intel NPU, GPU, and CPU.
 
+## About
+
+This project provides a unified benchmarking platform for evaluating Large Language Model performance across different model formats, quantization levels, and hardware configurations. Originally designed to leverage Intel's hardware acceleration capabilities, the framework supports comprehensive testing of model conversion pipelines from HuggingFace transformers to optimized ONNX and OpenVINO formats.
+
+The benchmarker addresses the critical need for performance validation when deploying LLMs in production environments, helping developers make informed decisions about model optimization trade-offs between accuracy, speed, and resource consumption. With built-in hardware detection and automatic fallback mechanisms, it ensures reliable benchmarking across diverse deployment scenarios.
+
 ## Supported Models
 
 - **Qwen 2.5**: Alibaba's latest language model
