@@ -69,8 +69,19 @@ The benchmarker addresses the critical need for performance validation when depl
 
 ## Installation
 
+### Option 1: Manual Installation
 ```bash
 pip install -r requirements.txt
+```
+
+### Option 2: Environment Setup Scripts
+```bash
+# Windows
+install_environment.bat
+
+# Linux/Mac
+chmod +x install_environment.sh
+./install_environment.sh
 ```
 
 ## Usage
@@ -139,6 +150,7 @@ The framework automatically detects hardware capabilities and gracefully handles
 For detailed information about completed benchmarks, current development progress, and future roadmap, see [project_summary.md](project_summary.md).
 
 ### Recent Achievements
+
 - ✅ **19+ benchmark runs** completed successfully
 - ✅ **Llama 3.2 3B** fully tested across HF, ONNX, and OpenVINO formats
 - ✅ **Intel hardware detection** working with NPU, GPU, and CPU support
