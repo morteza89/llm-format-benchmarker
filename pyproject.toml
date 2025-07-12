@@ -1,0 +1,121 @@
+# Development configuration
+# LLM Format Benchmarker - Multi-format model benchmarking and comparison tool
+
+[project]
+name = "llm-format-benchmarker"
+version = "1.0.0"
+description = "Comprehensive benchmarking and comparison tool for LLM models across HuggingFace, ONNX, and OpenVINO formats with Intel hardware optimization"
+authors = [
+    {name = "LLM Benchmarking Team"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["llm", "benchmarking", "onnx", "openvino", "huggingface", "intel", "quantization"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.21.0",
+    "accelerate>=0.20.0",
+    "bitsandbytes>=0.39.0",
+    "datasets>=2.3.0",
+    "optimum[intel]>=1.9.0",
+    "nncf>=2.5.0",
+    "onnx>=1.14.0",
+    "onnxruntime>=1.15.0",
+    "openvino>=2023.0.0",
+    "openvino-genai>=2024.0.0",
+    "psutil>=5.9.0",
+    "requests>=2.28.0",
+    "numpy>=1.21.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+    "pre-commit>=2.17.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/llm-benchmarking/llm-format-benchmarker"
+Repository = "https://github.com/llm-benchmarking/llm-format-benchmarker"
+Documentation = "https://github.com/llm-benchmarking/llm-format-benchmarker#readme"
+Issues = "https://github.com/llm-benchmarking/llm-format-benchmarker/issues"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+  | venv
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "venv",
+    ".venv",
+    "*.egg-info"
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests"
+]
+python_files = [
+    "test_*.py",
+    "*_test.py"
+]
+python_classes = [
+    "Test*"
+]
+python_functions = [
+    "test_*"
+]
+
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"

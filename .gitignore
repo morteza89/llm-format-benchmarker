@@ -1,0 +1,168 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.env
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Model files and directories
+configs/models/
+models/
+*.onnx
+*.bin
+*.xml
+*.json.bak
+*_ov/
+*_onnx/
+*.safetensors
+*.model
+
+# Cache and temporary files
+cache/
+configs/cache/
+*.cache
+.cache/
+temp/
+tmp/
+*.tmp
+*.temp
+
+# Logs
+logs/
+configs/logs/
+*.log
+*.out
+
+# Results and outputs
+results/
+configs/results/
+outputs/
+benchmark_results_*.json
+model_comparison_*.json
+test_comparison.json
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# Hugging Face cache
+.huggingface/
+transformers_cache/
+
+# PyTorch
+*.pth
+*.pt
+
+# TensorFlow
+*.pb
+saved_model/
+checkpoints/
+
+# ONNX Runtime
+*.ort
+
+# OpenVINO
+*.blob
+*.mapping
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Package files
+*.tar.gz
+*.zip
+*.rar
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+*.lnk
+
+# Linux
+*~
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Test files (keep test structure but ignore outputs)
+test_prompts.txt
+
+# Specific project ignores
+run_benchmark.bat
+setup.py
+
+# Keep structure files but ignore generated content
+!configs/results/.gitkeep
+!configs/models/.gitkeep
+!configs/cache/.gitkeep
+!configs/logs/.gitkeep
+!logs/.gitkeep
+!cache/.gitkeep
+!results/.gitkeep
+
+# Allow Python files in models directory
+!models/
+!models/*.py
+!models/**/*.py
