@@ -4,30 +4,24 @@ Practical Model Comparison Tool
 Compares HF model outputs with different quantizations
 """
 
-from configs.config import MODELS, RESULTS_DIR
-from datetime import datetime
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
+import json
+import time
+import logging
+from typing import List, Optional
 from dataclasses import dataclass, asdict
-from typing import List, Dict, Optional
+from datetime import datetime
+from configs.config import MODELS, RESULTS_DIR
 import sys
 from pathlib import Path
-import logging
-import time
-import json
-import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
 
-# Add project root to path
+#! Add project root to path
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
 
-# Add project root to path
-project_root = Path(__file__).parent.parent
-sys.path.insert(0, str(project_root))
-
-# Import required modules
-
-# Set up logging
+# * Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 

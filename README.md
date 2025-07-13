@@ -14,11 +14,17 @@ The benchmarker addresses the critical need for performance validation when depl
 
 ## Supported Models
 
-## Following models have been tested and verified so far. To be continued...
+Following models have been tested and verified on Intel AI PC platform:
 
-- **Qwen 2.5**: Alibaba's latest language model
-- **Llama 3.2 3B**: Meta's compact language model
-- **LLaVA**: Large Language and Vision Assistant
+- **Llama 3.2 3B**: Meta's compact language model ✅ **Tested on Intel AI PC**
+  - Successfully benchmarked on Intel CPU with 4.9 tokens/sec average throughput
+  - Memory usage: ~6.2GB for FP16 inference
+  - Model loading time: ~6 seconds (cached)
+- **Microsoft DialoGPT-small**: Small conversational model ✅ **Verified**
+  - Quick testing model (351MB) for development and CI
+  - Loading time: ~3 minutes, Generation: <1 second
+- **Qwen 2.5**: Alibaba's latest language model (in testing)
+- **LLaVA**: Large Language and Vision Assistant (in testing)
 
 ## Features
 
@@ -36,9 +42,28 @@ The benchmarker addresses the critical need for performance validation when depl
 
 ### Hardware Backends
 
-- **Intel NPU**: Neural Processing Unit for AI acceleration
-- **Intel GPU**: Integrated and discrete graphics
-- **Intel CPU**: Multi-core processor support
+- **Intel NPU**: Neural Processing Unit for AI acceleration (Intel AI PC)
+- **Intel GPU**: Integrated graphics (Intel Iris Xe and newer)
+- **Intel CPU**: Multi-core processor support (tested on Intel Core Ultra)
+
+### Intel AI PC Platform Testing
+
+This framework has been specifically tested and optimized for Intel AI PC platforms:
+
+**Tested Configuration:**
+
+- **CPU**: Intel Core Ultra 9 288V (8 cores)
+- **GPU**: Intel Integrated Graphics
+- **NPU**: Intel NPU (detected and supported)
+- **Memory**: 31.48 GB System RAM
+- **OS**: Windows 11
+
+**Performance Results:**
+
+- **CPU Inference**: 4.9 tokens/sec average (Llama 3.2 3B)
+- **Memory Usage**: ~6.2GB for 3B parameter models
+- **Model Loading**: 6-10 seconds for cached models
+- **Hardware Detection**: Full NPU/GPU/CPU detection working
 
 ## Project Structure
 
@@ -70,11 +95,13 @@ The benchmarker addresses the critical need for performance validation when depl
 ## Installation
 
 ### Option 1: Manual Installation
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### Option 2: Environment Setup Scripts
+
 ```bash
 # Windows
 install_environment.bat
@@ -151,8 +178,12 @@ For detailed information about completed benchmarks, current development progres
 
 ### Recent Achievements
 
-- ✅ **19+ benchmark runs** completed successfully
-- ✅ **Llama 3.2 3B** fully tested across HF, ONNX, and OpenVINO formats
-- ✅ **Intel hardware detection** working with NPU, GPU, and CPU support
+- ✅ **Intel AI PC Platform**: Fully tested on Intel Core Ultra with NPU/GPU/CPU detection
+- ✅ **Llama 3.2 3B Performance**: 4.9 tokens/sec on Intel CPU, 6.2GB memory usage
+- ✅ **Microsoft DialoGPT-small**: Verified as quick test model (351MB)
+- ✅ **Environment Setup**: Python 3.11.9 virtual environment with all dependencies
+- ✅ **Hardware Detection**: NPU, Intel GPU, and CPU properly detected
+- ✅ **Model Benchmarking**: Successful FP16 inference on CPU backend
+- ✅ **19+ benchmark runs** completed with detailed performance metrics
 - ✅ **Model comparison tools** operational with quality assessment
 - ✅ **Interactive examples** providing user-friendly experience

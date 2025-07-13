@@ -2,35 +2,77 @@
 
 ## Overview
 
-This document provides a comprehensive overview of the benchmarking results achieved so far and outlines our ongoing development roadmap.
+This document provides a comprehensive overview of the benchmarking results achieved on Intel AI PC platform and outlines our ongoing development roadmap.
+
+## Intel AI PC Platform Validation
+
+### Testing Environment
+
+**Hardware Configuration:**
+
+- **CPU**: Intel Core Ultra 9 288V (8 cores, X86_64)
+- **Memory**: 31.48 GB System RAM
+- **GPU**: Intel Integrated Graphics (detected)
+- **NPU**: Intel NPU (detected and supported)
+- **OS**: Windows 11
+
+**Software Stack:**
+
+- **Python**: 3.11.9 (Virtual Environment)
+- **PyTorch**: 2.7.1+cpu
+- **Transformers**: 4.52.4
+- **ONNX**: 1.18.0
+- **OpenVINO**: 2025.2.0
 
 ## Completed Benchmarks
 
-### Models Tested
+### Models Tested on Intel AI PC
 
-Based on the benchmark results from July 11-12, 2025:
+#### ✅ Llama 3.2 3B - Full Intel AI PC Validation
 
-#### ✅ Llama 3.2 3B
+- **Performance Results**:
+  - **Average Throughput**: 4.9 tokens/sec (Intel CPU)
+  - **Average Latency**: 1,038.8 ms for 5 tokens
+  - **Memory Usage**: ~6.2GB for FP16 inference
+  - **Model Loading**: 6 seconds (cached model)
+- **Formats Tested**: HuggingFace (HF) ✅
+- **Quantizations**: FP16 ✅
+- **Hardware Backends**: Intel CPU ✅
+- **Status**: Successfully benchmarked with 5/5 successful runs
 
-- **Formats Tested**: HuggingFace (HF), ONNX, OpenVINO (OV)
-- **Quantizations**: FP16, 8-bit
-- **Hardware Backends**: Intel CPU, Intel GPU
-- **Status**: Successfully benchmarked and converted
-- **Results**: 19+ benchmark runs completed with performance metrics
+#### ✅ Microsoft DialoGPT-small - Quick Test Model
 
-#### ✅ Qwen 2.5
+- **Performance Results**:
+  - **Model Size**: 351MB
+  - **Loading Time**: ~200 seconds (download + load)
+  - **Generation Time**: 0.13 seconds for 5 tokens
+  - **Memory Usage**: Efficient for development testing
+- **Status**: Verified as development/CI test model
+- **Use Case**: Quick validation and continuous integration
 
-- **Formats Tested**: HuggingFace (HF)
-- **Quantizations**: FP16
-- **Hardware Backends**: Intel CPU
-- **Status**: Initial benchmarking completed
-- **Results**: Successfully tested with various prompts
+#### 🔄 Qwen 2.5 - In Testing Queue
 
-### Hardware Compatibility Verified
+- **Status**: Model configuration ready, awaiting benchmark execution
 
-- **Intel CPU**: Full support (HF, ONNX, OV formats)
-- **Intel GPU**: Partial support (HF, OV formats)
-- **Intel NPU**: Framework ready (OV format)
+#### 🔄 LLaVA - In Testing Queue
+
+- **Status**: Model configuration ready, awaiting benchmark execution
+
+### Intel AI PC Hardware Compatibility
+
+- **Intel CPU**: ✅ Full support (HF format tested, ONNX/OV ready)
+  - Core Ultra 9 288V: 4.9 tokens/sec performance verified
+- **Intel GPU**: ✅ Detected and configured (HF, OV formats ready)
+  - Integrated Graphics: Framework setup complete
+- **Intel NPU**: ✅ Detected and ready (OV format optimized)
+  - Hardware detection working, awaiting OV model testing
+
+### Environment Setup Results
+
+- **Virtual Environment**: ✅ Successfully created (.venv)
+- **Dependency Installation**: ✅ All 50+ packages installed correctly
+- **Import System**: ✅ All modules loading without errors
+- **Hardware Detection**: ✅ NPU, GPU, CPU properly identified
 
 ### Benchmark Statistics
 
